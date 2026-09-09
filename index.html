@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <h1>Todo</h1>
+      <p class="app__subtitle" id="summary">0 件のタスク</p>
+    </header>
+
+    <form class="new-todo" id="new-todo-form" autocomplete="off">
+      <input
+        class="new-todo__input"
+        id="new-todo-input"
+        type="text"
+        placeholder="新しいタスクを入力して Enter"
+        aria-label="新しいタスク"
+        maxlength="500"
+        required
+      >
+      <button class="new-todo__submit" type="submit">追加</button>
+    </form>
+
+    <div class="filters" role="tablist" aria-label="表示フィルター">
+      <button class="filters__btn is-active" data-filter="all" role="tab">すべて</button>
+      <button class="filters__btn" data-filter="active" role="tab">未完了</button>
+      <button class="filters__btn" data-filter="completed" role="tab">完了</button>
+    </div>
+
+    <ul class="todo-list" id="todo-list"></ul>
+
+    <p class="empty" id="empty-state" hidden>タスクはありません</p>
+
+    <footer class="app__footer">
+      <span id="active-count">0 件の未完了</span>
+      <button class="app__clear" id="clear-completed" type="button">完了を削除</button>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
